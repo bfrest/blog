@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { testPosts } from './testPosts';
-import { useParams, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 const PostViewWrap = styled.div`
+	height: 100%;
 	img {
 		width: 100vw;
 	}
+
+	p {
+		line-height: 1.5em;
+		font-weight: 300;
+	}
 `;
 
-const PostView = ({ match, location }) => {
+const PostView = () => {
 	const [currentPost, setCurrentPost] = useState(testPosts[0]);
-	let locationlocation = useLocation();
+	let currentUrl = useLocation();
 
+	useEffect(() => {
+		setCurrentPost(currentUrl.state);
+	}, []);
 	return (
 		<PostViewWrap>
-			{console.log(locationlocation)}
-			<img src='https://res.cloudinary.com/bfrest/image/upload/v1579927803/hogwarts-castle-.jpg' />
+			{console.log(currentPost)}
+			<img
+				src='https://res.cloudinary.com/bfrest/image/upload/v1579927803/hogwarts-castle-.jpg'
+				alt='placeholder'
+			/>
 			<h2>
 				{currentPost.title} {currentPost.id}
 			</h2>

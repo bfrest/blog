@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const PostList = styled.div`
 	font-size: 0.6em;
 	line-height: 1em;
-	background-color: #f8b195;
 	height: 100vh;
 	width: 100vw;
 	padding-top: 50px;
@@ -22,11 +21,15 @@ const PostList = styled.div`
 	.life {
 		background-color: #6c5b7b;
 	}
+
+	.music {
+		background-color: lightseagreen;
+	}
 `;
 
 const PostItem = styled.h2`
 	padding: 20px;
-	color: #f8b195;
+	color: white;
 	margin: 20px;
 	font-size: 1.5em;
 	line-height: 1em;
@@ -37,7 +40,11 @@ const AllPosts = () => {
 	return (
 		<PostList>
 			{testPosts.map((item) => (
-				<Link to={`/?id=${item.id}`} style={{ textDecoration: 'none' }}>
+				<Link
+					key={item.id}
+					to={{ pathname: `/${item.id}`, state: { ...item } }}
+					style={{ textDecoration: 'none' }}
+				>
 					<PostItem className={item.label}>{item.title}</PostItem>
 				</Link>
 			))}

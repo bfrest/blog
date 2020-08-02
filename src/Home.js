@@ -5,10 +5,11 @@ import styled from 'styled-components';
 const HomeWrap = styled.div`
 	width: 100vw;
 	font-family: 'Poppins', sans-serif;
-	font-size: 1em;
+	font-size: 1.3em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin-top: 20vh;
 
 	a {
 		text-decoration: none;
@@ -50,15 +51,6 @@ const HomeWrap = styled.div`
 		}
 	}
 
-	.intro,
-	.projects {
-		width: 70%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding-bottom: 80px;
-	}
-
 	img {
 		width: 80%;
 		box-shadow: 1px 1px 10px gray;
@@ -76,20 +68,23 @@ const HomeWrap = styled.div`
 	}
 
 	.intro p {
-		margin-top: -10px;
+		margin-top: 15px;
+		line-height: 1.5em;
 	}
 
 	h3 {
 		text-decoration: underline;
 		text-decoration-color: #6c5b7b;
+		margin-top: 15px;
 	}
 
 	.projects {
 		line-height: 2.5em;
+		margin-top: 200px;
 	}
 
 	.projects img {
-		margin: 85px 0 10px 0;
+		margin: 25px 0 10px 0;
 	}
 
 	.projects a {
@@ -132,9 +127,9 @@ const Home = () => {
 		<HomeWrap>
 			<div className='intro'>
 				<h1>Hello, I'm Brendon.</h1>
-				<h3>Web Developer</h3>
-
-				<p>I enjoy creating useful and meaningful tools.</p>
+				<p>
+					I am a Web Developer and enjoy creating useful and meaningful tools.
+				</p>
 				<p>
 					Some of my favorite things are being a dad, music, coffee, astronomy,
 					running, hiking, Reeses Cups, Harry Potter, and video games.
