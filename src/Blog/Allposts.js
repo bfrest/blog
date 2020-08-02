@@ -1,6 +1,7 @@
 import React from 'react';
 import { testPosts } from './testPosts';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const PostList = styled.div`
 	font-size: 0.6em;
@@ -36,7 +37,9 @@ const AllPosts = () => {
 	return (
 		<PostList>
 			{testPosts.map((item) => (
-				<PostItem className={item.label}>{item.title}</PostItem>
+				<Link to={`/?id=${item.id}`} style={{ textDecoration: 'none' }}>
+					<PostItem className={item.label}>{item.title}</PostItem>
+				</Link>
 			))}
 		</PostList>
 	);
