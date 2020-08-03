@@ -16,15 +16,15 @@ const PostViewWrap = styled.div`
 `;
 
 const PostView = () => {
-	const [currentPost, setCurrentPost] = useState(testPosts[0]);
+	const [currentPost, setCurrentPost] = useState(null);
 	let currentUrl = useLocation();
 
 	useEffect(() => {
-		setCurrentPost(currentUrl.state);
-	}, []);
+		setCurrentPost(currentUrl.pathname);
+	});
+
 	return (
 		<PostViewWrap>
-			{console.log(currentPost)}
 			<img
 				src='https://res.cloudinary.com/bfrest/image/upload/v1579927803/hogwarts-castle-.jpg'
 				alt='placeholder'
