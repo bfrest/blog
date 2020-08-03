@@ -20,7 +20,7 @@ const PostView = () => {
 
 	useEffect(() => {
 		setCurrentPost(currentUrl.pathname);
-	});
+	}, []);
 
 	return (
 		<PostViewWrap>
