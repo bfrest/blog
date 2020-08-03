@@ -23,10 +23,7 @@ const PostView = () => {
 
 	return (
 		<PostViewWrap>
-			<img
-				src='https://res.cloudinary.com/bfrest/image/upload/v1579927803/hogwarts-castle-.jpg'
-				alt='placeholder'
-			/>
+			<img src={currentPost.img} alt='placeholder' />
 			<h2>
 				{currentPost.title} {currentPost.id}
 			</h2>
