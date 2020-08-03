@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { testPosts } from './testPosts';
 import { useLocation } from 'react-router-dom';
 
 const PostViewWrap = styled.div`
